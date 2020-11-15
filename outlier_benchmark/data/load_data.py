@@ -22,6 +22,13 @@ _file_loader = dict(
 
 
 def load(name: str, data_home=None) -> Tuple[np.ndarray, np.ndarray]:
+    """
+    loads the data with the given name. Get a list of available data sets by using list_available_files().
+
+    :param name: name of the dataset. include the file ending.
+    :param data_home: if not specified, defaults to the home directory of the user.
+    :return: (X, y), both are numpy arrays
+    """
     home = get_data_home(data_home=data_home)
     file_path = home.joinpath(folder(name)).joinpath(name)
 
