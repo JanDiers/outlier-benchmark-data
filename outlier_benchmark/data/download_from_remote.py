@@ -1,6 +1,10 @@
 from os import environ, makedirs, sep
 from os.path import exists, expanduser, join
 from pathlib import Path
+import urllib.request
+
+
+DOWNLOAD_BASE_URL = 'https://raw.githubusercontent.com/JanDiers/outlier-benchmark-data/master/outlier_benchmark/files/'
 
 
 def get_data_home(data_home=None) -> Path:
@@ -24,6 +28,15 @@ def get_data_home(data_home=None) -> Path:
 
 
 def download(filename: str, data_home=None):
-    pass
+    data_home = get_data_home(data_home)
 
+    folder = filename.split('_')[0]
 
+    url = DOWNLOAD_BASE_URL + folder + '/' + filename
+    response = urllib.request.urlopen(url)
+    data = response.read()      # a `bytes` object
+    text = data.decode('utf-8')
+
+    path = data_home / folder / filename
+
+    path.write_text(text, encoding='utf-8')

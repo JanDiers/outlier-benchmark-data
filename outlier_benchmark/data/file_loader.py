@@ -34,10 +34,15 @@ class ArffFileLoader(FileLoader):
         cols = df.select_dtypes(include=['object']).columns
         df[cols] = df[cols].applymap(lambda x: x.decode())
 
-        df['outlier'].replace({"yes": 1, "no": 0}, inplace=True)
+        target = 'outlier'
+        try:
+            df[target].replace({"yes": 1, "no": 0}, inplace=True)
+        except KeyError:
+            target = 'Outlier'
+            df[target].replace({"yes": 1, "no": 0}, inplace=True)
 
-        X = df.drop('outlier', 1).values
-        y = df['outlier'].values
+        X = df.drop(target, 1).values
+        y = df[target].values
 
         return X, y
 
