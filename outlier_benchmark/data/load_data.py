@@ -26,7 +26,7 @@ def list_available_files() -> List[str]:
     lists all files that are available, either already offline on your system or online to download
     :return: list of all files: List[str]
     """
-    from outlier_benchmark.files.list_of_files import all_files
+    from outlier_benchmark.data.list_of_files import all_files
     return all_files
 
 
