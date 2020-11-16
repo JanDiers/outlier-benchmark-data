@@ -47,7 +47,7 @@ class Dataset(BaseDataset):
 class DatasetCollection(list):
     def __init__(self, datasets: filter = None):
         if datasets is None:  # build all datasets
-            datasets = [BaseDataset(
+            datasets = [Dataset(
                 filename=filename, name=get_name(filename),
                 norm=get_norm(filename), percent=get_percent(filename), vnum=get_vnum(filename)
             ) for filename in all_files]
@@ -55,11 +55,13 @@ class DatasetCollection(list):
         super().__init__(datasets)
 
     def _highest_vnum(self):
-        all_names = set([d.name for d in self])
-        for name in all_names:
-            highest_vnum = max([d.vnum for d in self])
+        remove_vnum = lambda f: re.sub(r'_v\d+', '', f)
+        all_without_versions = set([remove_vnum(d.filename) for d in self])
+
+        for variant in all_without_versions:
+            highest_vnum = max([d.vnum for d in self if remove_vnum(d.filename) == variant])
             for d in self:
-                if d.name == name and d.vnum == highest_vnum:
+                if remove_vnum(d.filename) == variant and d.vnum == highest_vnum:
                     yield d
 
     def vnum(self, num: float = -1):
@@ -116,7 +118,10 @@ class DatasetCollection(list):
         r = filter(accept, self)
         return DatasetCollection(r)
 
-    def withoutdupl(self):
-        accept = lambda d: '_withoutdupl' in d.filename
-        return DatasetCollection(filter(accept, self))
+    def withoutdupl(self, withoutdupl: bool):
+        if withoutdupl:
+            accept = lambda d: '_withoutdupl' in d.filename
+        else:
+            accept = lambda d: '_withoutdupl' not in d.filename
 
+        return DatasetCollection(filter(accept, self))
