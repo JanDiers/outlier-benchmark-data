@@ -1,11 +1,31 @@
 import re
 from collections import namedtuple
-from typing import Union, Tuple
+from dataclasses import dataclass, field
+from pathlib import Path
+from typing import Union, Tuple, List
 
 import numpy as np
 
 from outlier_benchmark.data.list_of_files import all_files
 from outlier_benchmark.data.load_data import load
+
+
+@dataclass
+class NEWDataset:
+    name: str
+    num_samples: int
+    num_features: int
+    num_outlier: int
+    file_path: str
+    pct_outlier: float = field(init=False)
+
+    def __post_init__(self):
+        self.pct_outlier = round(self.num_outlier / self.num_samples, 4)
+
+    def load(self) -> Tuple[np.ndarray, np.ndarray]:
+        raise NotImplementedError('Metadata can not be loaded right now.')
+        return load(filename)
+
 
 
 def get_percent(filename: str) -> Union[None, float]:
