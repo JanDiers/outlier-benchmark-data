@@ -1,0 +1,1 @@
+from .kddcup99 import KDDCup99kddcup99 = KDDCup99()__all__ = [kddcup99]

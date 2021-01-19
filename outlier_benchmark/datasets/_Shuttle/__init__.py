@@ -1,0 +1,1 @@
+from .shuttle import Shuttleshuttle = Shuttle()__all__ = [shuttle]

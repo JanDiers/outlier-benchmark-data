@@ -1,0 +1,1 @@
+from .spambase import SpamBasespambase = SpamBase()__all__ = [spambase]
