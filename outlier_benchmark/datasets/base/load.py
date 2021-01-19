@@ -21,6 +21,3 @@ def get_data_home(data_home=None) -> Path:
     data_home = Path(data_home)
 
     return data_home
-
-
-
