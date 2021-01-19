@@ -1,9 +1,8 @@
-import unittest
 import shutil
+import unittest
 from pathlib import Path
 
 import numpy as np
-from tqdm import tqdm
 
 from outlier_benchmark.datasets import __all__ as all_datasets
 
@@ -19,10 +18,10 @@ class TestStringMethods(unittest.TestCase):
 
     def test_download_and_loading(self):
         from outlier_benchmark.datasets import __all__ as all_datasets
-        all_datasets = tqdm(all_datasets)
         for dataset in all_datasets:
-            all_datasets.set_description(desc=f'dataset {dataset.name} - try download with download=False')
+            print(f'dataset {dataset.name} - try download with download=False')
             path = dataset.path
+
             # remove previously downloaded file
             if path.exists():
                 shutil.rmtree(path.parent)
@@ -31,7 +30,7 @@ class TestStringMethods(unittest.TestCase):
             with self.assertRaises(ValueError):
                 dataset.load(download=False)
 
-            all_datasets.set_description(desc=f'dataset {dataset.name} - try download from github')
+            print(f'dataset {dataset.name} - try download from github')
 
             X, y = dataset.load(download=True)
 
