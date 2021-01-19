@@ -1,27 +1,42 @@
 import unittest
 import shutil
+from pathlib import Path
 
 import numpy as np
+from tqdm import tqdm
+
+from outlier_benchmark.datasets import __all__ as all_datasets
 
 
 class TestStringMethods(unittest.TestCase):
 
-    def test_download(self):
-        from outlier_benchmark.datasets import wbc
-        path = wbc.path
+    def test_all_importable(self):
+        dataset_names = [dataset.name for dataset in all_datasets]
+        for path in Path('../outlier_benchmark/datasets/').iterdir():
+            folder_name = path.stem
+            if folder_name[0] == '_' and folder_name[1] != '_':
+                self.assertIn(folder_name[1:], dataset_names)
 
-        # remove previously downloaded file
-        if path.exists():
-            shutil.rmtree(path.parent)
+    def test_download_and_loading(self):
+        from outlier_benchmark.datasets import __all__ as all_datasets
+        all_datasets = tqdm(all_datasets)
+        for dataset in all_datasets:
+            all_datasets.set_description(desc=f'dataset {dataset.name} - try download with download=False')
+            path = dataset.path
+            # remove previously downloaded file
+            if path.exists():
+                shutil.rmtree(path.parent)
 
-        # assert no download is triggered if download = False
-        with self.assertRaises(ValueError):
-            wbc.load(download=False)
+            # assert no download is triggered if download = False
+            with self.assertRaises(ValueError):
+                dataset.load(download=False)
 
-        X, y = wbc.load(download=True)
+            all_datasets.set_description(desc=f'dataset {dataset.name} - try download from github')
 
-        self.assertTrue(isinstance(X, np.ndarray))
-        self.assertTrue(isinstance(y, np.ndarray))
+            X, y = dataset.load(download=True)
+
+            self.assertTrue(isinstance(X, np.ndarray))
+            self.assertTrue(isinstance(y, np.ndarray))
 
 
 if __name__ == '__main__':
