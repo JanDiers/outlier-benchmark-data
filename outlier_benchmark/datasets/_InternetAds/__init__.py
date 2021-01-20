@@ -1,1 +1,0 @@
-from .internetads import InternetAdsinternetads = InternetAds()__all__ = [internetads]

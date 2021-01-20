@@ -1,1 +1,0 @@
-from .parkinson import Parkinsonparkinson = Parkinson()__all__ = [parkinson]

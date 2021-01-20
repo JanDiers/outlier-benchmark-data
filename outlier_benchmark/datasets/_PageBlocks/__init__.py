@@ -1,1 +1,0 @@
-from .pageblocks import PageBlockspageblocks = PageBlocks()__all__ = [pageblocks]

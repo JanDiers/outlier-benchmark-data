@@ -1,1 +1,0 @@
-from .ionosphere import Ionosphereionosphere = Ionosphere()__all__ = [ionosphere]

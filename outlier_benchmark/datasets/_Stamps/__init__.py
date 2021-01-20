@@ -1,1 +1,0 @@
-from .stamps import Stampsstamps = Stamps()__all__ = [stamps]

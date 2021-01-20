@@ -1,1 +1,0 @@
-from .glass import Glassglass = Glass()__all__ = [glass]

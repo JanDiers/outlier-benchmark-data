@@ -1,1 +1,0 @@
-from .hepatitis import Hepatitishepatitis = Hepatitis()__all__ = [hepatitis]

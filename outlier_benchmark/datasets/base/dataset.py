@@ -9,7 +9,7 @@ import pandas as pd
 
 @dataclass
 class BaseDataset:
-    name: str
+    name: str = field(init=False)
     num_samples: int
     num_features: int
     num_outlier: int
@@ -31,8 +31,10 @@ class BaseDataset:
         the dataset will be downloaded to your local machine.
 
         Example:
+
         >>> from outlier_benchmark.datasets import wbc
-        >>> X, y = wbc.load(download=True)  # download will only take place if not previously downloaded
+        >>> X, y = wbc.load(download=True)
+        >>> # download will only take place if not previously downloaded
         >>> X.shape  # (454, 9)
 
         :param download: bool, if download is allowed
