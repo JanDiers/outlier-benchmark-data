@@ -27,15 +27,8 @@ class BaseDataset:
 
     def load(self, download: bool = True) -> Tuple[np.ndarray, np.ndarray]:
         """
-        loads the data X and y, both numpy arrays. If not previously downloaded and download = True, before loading
+        loads the data X and y, both numpy arrays. If not previously downloaded and ``download=True``, before loading
         the dataset will be downloaded to your local machine.
-
-        Example:
-
-        >>> from outlier_benchmark.datasets import wbc
-        >>> X, y = wbc.load(download=True)
-        >>> # download will only take place if not previously downloaded
-        >>> X.shape  # (454, 9)
 
         :param download: bool, if download is allowed
         :return: X and y, both numpy arrays.
