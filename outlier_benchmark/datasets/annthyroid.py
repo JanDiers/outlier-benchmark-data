@@ -47,7 +47,7 @@ class Annthyroid(BaseDataset):
     num_samples: int = field(default=7016, init=False)
     num_features: int = field(default=21, init=False)
     num_outlier: int = field(default=350, init=False)
-    number_duplicates: int = field(default=71, init=False)
+    num_duplicates: int = field(default=71, init=False)
 
 
 annthyroid = Annthyroid()

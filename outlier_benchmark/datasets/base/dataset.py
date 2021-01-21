@@ -13,7 +13,7 @@ class BaseDataset:
     num_samples: int
     num_features: int
     num_outlier: int
-    number_duplicates: int
+    num_duplicates: int
     pct_outlier: float = field(init=False)
 
     @property

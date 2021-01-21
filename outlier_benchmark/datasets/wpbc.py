@@ -47,7 +47,7 @@ class WPBC(BaseDataset):
     num_samples: int = field(default=198, init=False)
     num_features: int = field(default=33, init=False)
     num_outlier: int = field(default=47, init=False)
-    number_duplicates: int = field(default=0, init=False)
+    num_duplicates: int = field(default=0, init=False)
 
 
 wpbc = WPBC()

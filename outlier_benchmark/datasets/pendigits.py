@@ -47,7 +47,7 @@ class PenDigits(BaseDataset):
     num_samples: int = field(default=9868, init=False)
     num_features: int = field(default=16, init=False)
     num_outlier: int = field(default=20, init=False)
-    number_duplicates: int = field(default=0, init=False)
+    num_duplicates: int = field(default=0, init=False)
 
 
 pendigits = PenDigits()

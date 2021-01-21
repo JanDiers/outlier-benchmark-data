@@ -47,7 +47,7 @@ class Lymphography(BaseDataset):
     num_samples: int = field(default=148, init=False)
     num_features: int = field(default=18, init=False)
     num_outlier: int = field(default=6, init=False)
-    number_duplicates: int = field(default=0, init=False)
+    num_duplicates: int = field(default=0, init=False)
 
 
 lymphography = Lymphography()

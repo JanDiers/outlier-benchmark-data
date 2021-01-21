@@ -47,7 +47,7 @@ class Arrhythmia(BaseDataset):
     num_samples: int = field(default=256, init=False)
     num_features: int = field(default=259, init=False)
     num_outlier: int = field(default=12, init=False)
-    number_duplicates: int = field(default=0, init=False)
+    num_duplicates: int = field(default=0, init=False)
 
 
 arrhythmia = Arrhythmia()

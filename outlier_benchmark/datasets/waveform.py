@@ -47,7 +47,7 @@ class Waveform(BaseDataset):
     num_samples: int = field(default=3443, init=False)
     num_features: int = field(default=21, init=False)
     num_outlier: int = field(default=100, init=False)
-    number_duplicates: int = field(default=0, init=False)
+    num_duplicates: int = field(default=0, init=False)
 
 
 waveform = Waveform()

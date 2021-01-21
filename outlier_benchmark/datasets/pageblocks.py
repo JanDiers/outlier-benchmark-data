@@ -47,7 +47,7 @@ class PageBlocks(BaseDataset):
     num_samples: int = field(default=5171, init=False)
     num_features: int = field(default=10, init=False)
     num_outlier: int = field(default=258, init=False)
-    number_duplicates: int = field(default=41, init=False)
+    num_duplicates: int = field(default=41, init=False)
 
 
 pageblocks = PageBlocks()

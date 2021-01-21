@@ -47,7 +47,7 @@ class Wilt(BaseDataset):
     num_samples: int = field(default=4839, init=False)
     num_features: int = field(default=5, init=False)
     num_outlier: int = field(default=261, init=False)
-    number_duplicates: int = field(default=20, init=False)
+    num_duplicates: int = field(default=20, init=False)
 
 
 wilt = Wilt()

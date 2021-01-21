@@ -47,7 +47,7 @@ class HeartDisease(BaseDataset):
     num_samples: int = field(default=157, init=False)
     num_features: int = field(default=13, init=False)
     num_outlier: int = field(default=7, init=False)
-    number_duplicates: int = field(default=0, init=False)
+    num_duplicates: int = field(default=0, init=False)
 
 
 heartdisease = HeartDisease()

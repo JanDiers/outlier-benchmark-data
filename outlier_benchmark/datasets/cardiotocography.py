@@ -47,7 +47,7 @@ class Cardiotocography(BaseDataset):
     num_samples: int = field(default=1742, init=False)
     num_features: int = field(default=21, init=False)
     num_outlier: int = field(default=87, init=False)
-    number_duplicates: int = field(default=9, init=False)
+    num_duplicates: int = field(default=9, init=False)
 
 
 cardiotocography = Cardiotocography()

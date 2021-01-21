@@ -47,7 +47,7 @@ class Glass(BaseDataset):
     num_samples: int = field(default=214, init=False)
     num_features: int = field(default=7, init=False)
     num_outlier: int = field(default=9, init=False)
-    number_duplicates: int = field(default=1, init=False)
+    num_duplicates: int = field(default=1, init=False)
 
 
 glass = Glass()

@@ -47,7 +47,7 @@ class Hepatitis(BaseDataset):
     num_samples: int = field(default=70, init=False)
     num_features: int = field(default=19, init=False)
     num_outlier: int = field(default=3, init=False)
-    number_duplicates: int = field(default=0, init=False)
+    num_duplicates: int = field(default=0, init=False)
 
 
 hepatitis = Hepatitis()

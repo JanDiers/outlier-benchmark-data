@@ -47,7 +47,7 @@ class ALOI(BaseDataset):
     num_samples: int = field(default=50000, init=False)
     num_features: int = field(default=27, init=False)
     num_outlier: int = field(default=1508, init=False)
-    number_duplicates: int = field(default=466, init=False)
+    num_duplicates: int = field(default=466, init=False)
 
 
 aloi = ALOI()

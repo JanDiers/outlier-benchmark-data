@@ -47,7 +47,7 @@ class SpamBase(BaseDataset):
     num_samples: int = field(default=2934, init=False)
     num_features: int = field(default=57, init=False)
     num_outlier: int = field(default=146, init=False)
-    number_duplicates: int = field(default=261, init=False)
+    num_duplicates: int = field(default=261, init=False)
 
 
 spambase = SpamBase()

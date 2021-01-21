@@ -47,7 +47,7 @@ class Shuttle(BaseDataset):
     num_samples: int = field(default=1013, init=False)
     num_features: int = field(default=9, init=False)
     num_outlier: int = field(default=13, init=False)
-    number_duplicates: int = field(default=0, init=False)
+    num_duplicates: int = field(default=0, init=False)
 
 
 shuttle = Shuttle()

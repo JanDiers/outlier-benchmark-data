@@ -47,7 +47,7 @@ class Pima(BaseDataset):
     num_samples: int = field(default=526, init=False)
     num_features: int = field(default=8, init=False)
     num_outlier: int = field(default=26, init=False)
-    number_duplicates: int = field(default=0, init=False)
+    num_duplicates: int = field(default=0, init=False)
 
 
 pima = Pima()
