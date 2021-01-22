@@ -27,7 +27,7 @@ def load_callbacks(load):
             if hasattr(callback, 'after_load'):
                 dataset, X, y = callback.after_load(dataset, X, y)
 
-        return dataset, X, y
+        return X, y
 
     return call_load
 
@@ -72,6 +72,9 @@ class BaseDataset:
         y = df['outlier'].values
         return X, y
 
+    def remove_callbacks(self):
+        self.callbacks = []
+
     def add_callback(self, callback: BaseCallback) -> None:
         """
         Adds the callback to the dataset. Callbacks are executed in the order they are added.
@@ -79,6 +82,10 @@ class BaseDataset:
         :param callback: callback,
         :return: None
         """
+
+        if not isinstance(callback, BaseCallback):
+            raise ValueError(f'Can only add instances of Callbacks as callback. You passed: {type(callback)}')
+
         self.callbacks.append(callback)
 
     def _download(self):
