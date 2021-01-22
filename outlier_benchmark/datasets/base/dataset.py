@@ -8,6 +8,7 @@ import numpy as np
 import pandas as pd
 
 from outlier_benchmark.callbacks.base.callback import BaseCallback
+from outlier_benchmark.callbacks.normalize import NormalizeCallback
 
 
 def load_callbacks(load):
@@ -87,6 +88,29 @@ class BaseDataset:
             raise ValueError(f'Can only add instances of Callbacks as callback. You passed: {type(callback)}')
 
         self.callbacks.append(callback)
+
+    def normalize(self, min: float = 0, max: float = 1) -> 'BaseDataset':
+        """
+        Normalizes the data after loading to the range (min, max).
+
+        Note: This is a shortcut to add a call. It is equvivalent to call
+        ``add_callback(NormalizeCallback(minimum=min, maximum=max))``.
+
+        Example (using the wdb dataset):
+
+        >>> from outlier_benchmark.datasets import waveform
+        >>> X, y = waveform.normalize(min=0, max=1).load()
+        >>> X.min, X.max()  # (0, 1)
+        >>> # you can also scale to arbitrary ranges:
+        >>> X, y = waveform.normalize(-0.55, 10.7).load()
+        >>> X.min, X.max()  # (-0.55, 10.7)
+
+        :param min: minmum value for every feature
+        :param max: maximum value for every feature
+        :return: self
+        """
+        self.add_callback(NormalizeCallback(minimum=min, maximum=max))
+        return self
 
     def _download(self):
         from outlier_benchmark.config import DOWNLOAD_BASE_URL, DATA_HOME
