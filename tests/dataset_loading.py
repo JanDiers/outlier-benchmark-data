@@ -1,24 +1,35 @@
+import importlib
+import inspect
 import shutil
 import unittest
-from pathlib import Path
 
 import numpy as np
 
 from outlier_benchmark.datasets import __all__ as all_datasets
 
 
-class TestStringMethods(unittest.TestCase):
+class TestDatasetLoading(unittest.TestCase):
+
+    def test_all(self):
+        self.test_download_and_loading()
+        self.test_no_parameters_allowed_in_dataset_classes()
+        self.test_all_importable()
 
     def test_all_importable(self):
-        dataset_names = [dataset.name for dataset in all_datasets]
-        for path in Path('../outlier_benchmark/datasets/').iterdir():
-            folder_name = path.stem
-            if folder_name[0] == '_' and folder_name[1] != '_':
-                self.assertIn(folder_name[1:], dataset_names)
+        for dataset in all_datasets:
+            print('try to import', dataset)
+            exec(f'from outlier_benchmark.datasets import {dataset} as dataset')
 
     def test_download_and_loading(self):
-        from outlier_benchmark.datasets import __all__ as all_datasets
+        module = importlib.import_module('outlier_benchmark.datasets')
+
         for dataset in all_datasets:
+
+            dataset = getattr(module, dataset)
+
+            if inspect.isclass(dataset):
+                dataset = dataset()
+
             print(f'dataset {dataset.name} - try download with download=False')
             path = dataset.path
 
@@ -37,6 +48,16 @@ class TestStringMethods(unittest.TestCase):
             self.assertTrue(isinstance(X, np.ndarray))
             self.assertTrue(isinstance(y, np.ndarray))
 
+    def test_no_parameters_allowed_in_dataset_classes(self):
+        module = importlib.import_module('outlier_benchmark.datasets')
 
-if __name__ == '__main__':
-    unittest.main()
+        for dataset in all_datasets:
+
+            dataset = getattr(module, dataset)
+
+            if inspect.isclass(dataset):
+                print('Ensure no parameters are allowed for instantiating datasets')
+                with self.assertRaises(TypeError):
+                    dataset(5)
+                    dataset(name='not_allowed_to_pass_names')
+
