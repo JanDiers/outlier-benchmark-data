@@ -55,7 +55,7 @@ class BaseDataset:
     num_outlier: int
     num_duplicates: int
     pct_outlier: float = field(init=False)
-    callbacks: list = field(default_factory=lambda: [])
+    callbacks: list = field(default_factory=lambda: [], repr=False)
 
     @property
     def path(self) -> Path:
