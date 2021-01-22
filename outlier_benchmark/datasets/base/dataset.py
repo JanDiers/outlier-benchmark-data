@@ -76,7 +76,7 @@ class BaseDataset:
     def remove_callbacks(self):
         self.callbacks = []
 
-    def add_callback(self, callback: BaseCallback) -> None:
+    def add_callback(self, callback: BaseCallback) -> 'BaseDataset':
         """
         Adds the callback to the dataset. Callbacks are executed in the order they are added.
 
@@ -88,6 +88,8 @@ class BaseDataset:
             raise ValueError(f'Can only add instances of Callbacks as callback. You passed: {type(callback)}')
 
         self.callbacks.append(callback)
+
+        return self
 
     def normalize(self, min: float = 0, max: float = 1) -> 'BaseDataset':
         """
