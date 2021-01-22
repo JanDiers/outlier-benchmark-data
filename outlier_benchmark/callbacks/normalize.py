@@ -28,10 +28,10 @@ class NormalizeCallback(BaseCallback):
     def after_load(self, dataset, X, y):
 
         # take care of zero divisions
-        scale = X.maximum(axis=0) - X.minimum(axis=0)
+        scale = X.max(axis=0) - X.min(axis=0)
 
         # calculuate nominator
-        X = ((X - X.minimum(axis=0)) * (self.maximum - self.minimum))
+        X = ((X - X.min(axis=0)) * (self.maximum - self.minimum))
 
         # divide if not zero. if zero: output 0. transform to the desired minimum value.
         X = self.minimum + np.divide(X, scale, out=np.zeros_like(X), where=scale != 0)
