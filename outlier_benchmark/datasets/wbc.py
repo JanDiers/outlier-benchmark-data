@@ -38,8 +38,9 @@ class WBC(BaseDataset):
     >>> X.min()  # 1.0
 
     ..  [1] Campos, G.O., Zimek, A., Sander, J. et al. On the evaluation of unsupervised outlier detection: measures,
-    datasets, and an empirical study. Data Min Knowl Disc 30, 891–927 (2016). https://doi.org/10.1007/s10618-015-0444-8
-10
+        datasets, and an empirical study. Data Min Knowl Disc 30, 891–927 (2016).
+        https://doi.org/10.1007/s10618-015-0444-8
+
     """
 
     name: str = field(default='WBC', init=False)
