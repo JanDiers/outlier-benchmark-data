@@ -98,7 +98,7 @@ class BaseDataset:
         Note: This is a shortcut to add a call. It is equvivalent to call
         ``add_callback(NormalizeCallback(minimum=min, maximum=max))``.
 
-        Example (using the wdb dataset):
+        Example (using the waveform dataset):
 
         >>> from outlier_benchmark.datasets import waveform
         >>> X, y = waveform.normalize(min=0, max=1).load()
