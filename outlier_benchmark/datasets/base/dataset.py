@@ -1,3 +1,4 @@
+import functools
 import urllib.request
 from dataclasses import dataclass, field
 from pathlib import Path
@@ -6,15 +7,40 @@ from typing import Tuple
 import numpy as np
 import pandas as pd
 
+from outlier_benchmark.callbacks.base.callback import BaseCallback
+
+
+def load_callbacks(load):
+    @functools.wraps(load)
+    def call_load(*args, **kwargs):
+        dataset: BaseDataset = args[0]
+
+        # execute callbacks before load
+        for callback in dataset.callbacks:
+            if hasattr(callback, 'before_load'):
+                dataset = callback.before_load(dataset)
+
+        X, y = load(*args, **kwargs)
+
+        # execute callbacks before load
+        for callback in dataset.callbacks:
+            if hasattr(callback, 'after_load'):
+                dataset, X, y = callback.after_load(dataset, X, y)
+
+        return X, y
+
+    return call_load
+
 
 @dataclass
 class BaseDataset:
-    name: str
+    name: str = field(init=False)
     num_samples: int
     num_features: int
     num_outlier: int
-    number_duplicates: int
+    num_duplicates: int
     pct_outlier: float = field(init=False)
+    callbacks: list = field(default_factory=lambda: [], repr=False)
 
     @property
     def path(self) -> Path:
@@ -25,22 +51,18 @@ class BaseDataset:
     def __post_init__(self):
         self.pct_outlier = round((self.num_outlier / self.num_samples) * 100, 2)
 
+    @load_callbacks
     def load(self, download: bool = True) -> Tuple[np.ndarray, np.ndarray]:
         """
-        loads the data X and y, both numpy arrays. If not previously downloaded and download = True, before loading
+        loads the data X and y, both numpy arrays. If not previously downloaded and ``download=True``, before loading
         the dataset will be downloaded to your local machine.
-
-        Example:
-        >>> from outlier_benchmark.datasets import wbc
-        >>> X, y = wbc.load(download=True)  # download will only take place if not previously downloaded
-        >>> X.shape  # (454, 9)
 
         :param download: bool, if download is allowed
         :return: X and y, both numpy arrays.
         """
         if not self.path.exists():
             if download:
-                self.download()
+                self._download()
             else:
                 raise ValueError(f'WBC data has not yet been downloaded to your machine and you passed download=False. '
                                  f'Pass download=True to download and load data.')
@@ -50,7 +72,25 @@ class BaseDataset:
         y = df['outlier'].values
         return X, y
 
-    def download(self):
+    def remove_callbacks(self):
+        self.callbacks = []
+
+    def add_callback(self, callback: BaseCallback) -> 'BaseDataset':
+        """
+        Adds the callback to the dataset. Callbacks are executed in the order they are added.
+
+        :param callback: callback,
+        :return: None
+        """
+
+        if not isinstance(callback, BaseCallback):
+            raise ValueError(f'Can only add instances of Callbacks as callback. You passed: {type(callback)}')
+
+        self.callbacks.append(callback)
+
+        return self
+
+    def _download(self):
         from outlier_benchmark.config import DOWNLOAD_BASE_URL, DATA_HOME
         download_from = self.path.relative_to(DATA_HOME)
 
