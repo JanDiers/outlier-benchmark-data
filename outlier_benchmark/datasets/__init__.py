@@ -21,6 +21,12 @@ from .wbc import wbc, WBC
 from .wdbc import wdbc, WDBC
 from .wilt import wilt, Wilt
 from .wpbc import wpbc, WPBC
+from .cifar05pct import cifar05pct, Cifar05pct
+from .cifar10pct import cifar10pct, Cifar10pct
+from .cifar15pct import cifar15pct, Cifar15pct
+from .mnist05pct import mnist05pct, MNIST05pct
+from .mnist10pct import mnist10pct, MNIST10pct
+from .mnist15pct import mnist15pct, MNIST15pct
 
 __all__ = [
     'aloi', 'ALOI',
@@ -46,4 +52,11 @@ __all__ = [
     'wdbc', 'WDBC',
     'wilt', 'Wilt',
     'wpbc', 'WPBC',
+    'cifar05pct', 'Cifar05pct',
+    'cifar10pct', 'Cifar10pct',
+    'cifar15pct', 'Cifar15pct',
+    'mnist05pct', 'MNIST05pct',
+    'mnist10pct', 'MNIST10pct',
+    'mnist15pct', 'MNIST15pct',
+
 ]

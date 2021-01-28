@@ -47,7 +47,7 @@ class InternetAds(BaseDataset):
     num_samples: int = field(default=2957, init=False)
     num_features: int = field(default=1555, init=False)
     num_outlier: int = field(default=147, init=False)
-    num_duplicates: int = field(default=1219, init=False)
+    num_duplicates: int = field(default=1210, init=False)
 
 
 internetads = InternetAds()
