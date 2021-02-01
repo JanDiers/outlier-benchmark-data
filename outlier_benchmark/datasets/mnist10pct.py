@@ -13,11 +13,11 @@ class MNIST10pct(BaseDataset):
     +-----------------------+--------+
     |number of features:    |  50    |
     +-----------------------+--------+
-    |number of outliers:    |  155   |
+    |number of outliers:    |  310   |
     +-----------------------+--------+
-    |percentage outliers:   | 0.05 % |
+    |percentage outliers:   | 9.1 %  |
     +-----------------------+--------+
-    |number of duplicates:  |    0   |
+    |number of duplicates:  |   15   |
     +-----------------------+--------+
 
     This dataset is based on the MNIST dataset. On the test set, an [EfficientNet]_ was used to extract embeddings

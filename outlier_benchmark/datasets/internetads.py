@@ -17,7 +17,7 @@ class InternetAds(BaseDataset):
     +-----------------------+--------+
     |percentage outliers:   |  4.97 %|
     +-----------------------+--------+
-    |number of duplicates:  |  1219  |
+    |number of duplicates:  |  1210  |
     +-----------------------+--------+
 
 

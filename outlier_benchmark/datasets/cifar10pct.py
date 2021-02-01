@@ -15,9 +15,9 @@ class Cifar10pct(BaseDataset):
     +-----------------------+--------+
     |number of outliers:    |  302   |
     +-----------------------+--------+
-    |percentage outliers:   | 9.58 % |
+    |percentage outliers:   | 9.15 % |
     +-----------------------+--------+
-    |number of duplicates:  |    0   |
+    |number of duplicates:  |    21  |
     +-----------------------+--------+
 
     This dataset is based on the CIFAR-10 dataset, known from computer vision. On the test set, an [EfficientNet]_ was

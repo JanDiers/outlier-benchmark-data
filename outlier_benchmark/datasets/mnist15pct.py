@@ -15,9 +15,9 @@ class MNIST15pct(BaseDataset):
     +-----------------------+--------+
     |number of outliers:    |  465   |
     +-----------------------+--------+
-    |percentage outliers:   | 0.05 % |
+    |percentage outliers:   |13.05 % |
     +-----------------------+--------+
-    |number of duplicates:  |    0   |
+    |number of duplicates:  |   26   |
     +-----------------------+--------+
 
     This dataset is based on the MNIST dataset. On the test set, an [EfficientNet]_ was used to extract embeddings

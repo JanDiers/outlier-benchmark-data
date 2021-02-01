@@ -17,7 +17,7 @@ class PageBlocks(BaseDataset):
     +-----------------------+--------+
     |percentage outliers:   |  4.99 %|
     +-----------------------+--------+
-    |number of duplicates:  |    41  |
+    |number of duplicates:  |    37  |
     +-----------------------+--------+
 
 
