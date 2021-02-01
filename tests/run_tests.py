@@ -1,11 +1,13 @@
 import unittest
 
 from tests.dataset_loading import TestDatasetLoading
+from tests.test_documentation import TestDocumentation
 
 
 def suite():
     suite = unittest.TestSuite()
     suite.addTest(TestDatasetLoading('test_all'))
+    suite.addTest(TestDocumentation('test_all'))
     return suite
 
 

@@ -32,10 +32,14 @@ class Pima(BaseDataset):
 
     >>> from outlier_benchmark.datasets import pima
     >>> X, y = pima.load(download=True)  # download will only take place if not previously downloaded
-    >>> X.shape  # (526, 8)
-    >>> y.sum()  # 26, the number of outliers in the dataset
-    >>> X.max()  # 744.0
-    >>> X.min()  # 0.0
+    >>> X.shape
+    (526, 8)
+    >>> y.sum()  # the number of outliers in the dataset
+    26
+    >>> X.max()
+    744.0
+    >>> X.min()
+    0.0
 
     ..  [1] Campos, G.O., Zimek, A., Sander, J. et al. On the evaluation of unsupervised outlier detection: measures,
         datasets, and an empirical study. Data Min Knowl Disc 30, 891–927 (2016).

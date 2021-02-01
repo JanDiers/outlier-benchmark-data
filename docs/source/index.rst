@@ -33,6 +33,7 @@ See all the datasets in the :doc:`modules/datasets` section.
 
 .. toctree::
    :hidden:
-   :maxdepth: 3
+   :maxdepth: 4
 
    modules/datasets
+   modules/callbacks

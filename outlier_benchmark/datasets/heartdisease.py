@@ -32,10 +32,14 @@ class HeartDisease(BaseDataset):
 
     >>> from outlier_benchmark.datasets import heartdisease
     >>> X, y = heartdisease.load(download=True)  # download will only take place if not previously downloaded
-    >>> X.shape  # (157, 13)
-    >>> y.sum()  # 7, the number of outliers in the dataset
-    >>> X.max()  # 564.0
-    >>> X.min()  # 0.0
+    >>> X.shape
+    (157, 13)
+    >>> y.sum()
+    7
+    >>> X.max()
+    564.0
+    >>> X.min()
+    0.0
 
     ..  [1] Campos, G.O., Zimek, A., Sander, J. et al. On the evaluation of unsupervised outlier detection: measures,
         datasets, and an empirical study. Data Min Knowl Disc 30, 891–927 (2016).

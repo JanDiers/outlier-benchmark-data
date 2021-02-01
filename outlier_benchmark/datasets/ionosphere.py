@@ -32,10 +32,14 @@ class Ionosphere(BaseDataset):
 
     >>> from outlier_benchmark.datasets import ionosphere
     >>> X, y = ionosphere.load(download=True)  # download will only take place if not previously downloaded
-    >>> X.shape  # (351, 32)
-    >>> y.sum()  # 126, the number of outliers in the dataset
-    >>> X.max()  # 1.0
-    >>> X.min()  # 0.0
+    >>> X.shape
+    (351, 32)
+    >>> y.sum()
+    126
+    >>> X.max()
+    1.0
+    >>> X.min()
+    0.0
 
     ..  [1] Campos, G.O., Zimek, A., Sander, J. et al. On the evaluation of unsupervised outlier detection: measures,
         datasets, and an empirical study. Data Min Knowl Disc 30, 891–927 (2016).

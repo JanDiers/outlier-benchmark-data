@@ -32,10 +32,14 @@ class Wilt(BaseDataset):
 
     >>> from outlier_benchmark.datasets import wilt
     >>> X, y = wilt.load(download=True)  # download will only take place if not previously downloaded
-    >>> X.shape  # (4839, 5)
-    >>> y.sum()  # 261, the number of outliers in the dataset
-    >>> X.max()  # 1848.916667
-    >>> X.min()  # 0.0
+    >>> X.shape
+    (4839, 5)
+    >>> y.sum()  # the number of outliers in the dataset
+    261
+    >>> X.max().round(2)
+    1848.92
+    >>> X.min()
+    0.0
 
     ..  [1] Campos, G.O., Zimek, A., Sander, J. et al. On the evaluation of unsupervised outlier detection: measures,
         datasets, and an empirical study. Data Min Knowl Disc 30, 891–927 (2016).

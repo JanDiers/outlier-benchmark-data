@@ -32,10 +32,14 @@ class Annthyroid(BaseDataset):
 
     >>> from outlier_benchmark.datasets import annthyroid
     >>> X, y = annthyroid.load(download=True)  # download will only take place if not previously downloaded
-    >>> X.shape  # (7016, 21)
-    >>> y.sum()  # 350, the number of outliers in the dataset
-    >>> X.max()  # 1.0
-    >>> X.min()  # 0.0
+    >>> X.shape
+    (7016, 21)
+    >>> y.sum()  # the number of outliers in the dataset
+    350
+    >>> X.max()
+    1.0
+    >>> X.min()
+    0.0
 
     ..  [1] Campos, G.O., Zimek, A., Sander, J. et al. On the evaluation of unsupervised outlier detection: measures,
         datasets, and an empirical study. Data Min Knowl Disc 30, 891–927 (2016).

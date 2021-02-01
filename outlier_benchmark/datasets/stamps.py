@@ -32,10 +32,14 @@ class Stamps(BaseDataset):
 
     >>> from outlier_benchmark.datasets import stamps
     >>> X, y = stamps.load(download=True)  # download will only take place if not previously downloaded
-    >>> X.shape  # (325, 9)
-    >>> y.sum()  # 16, the number of outliers in the dataset
-    >>> X.max()  # 1.0
-    >>> X.min()  # 0.0
+    >>> X.shape
+    (325, 9)
+    >>> y.sum()  # the number of outliers in the dataset
+    16
+    >>> X.max()
+    1.0
+    >>> X.min()
+    0.0
 
     ..  [1] Campos, G.O., Zimek, A., Sander, J. et al. On the evaluation of unsupervised outlier detection: measures,
         datasets, and an empirical study. Data Min Knowl Disc 30, 891–927 (2016).

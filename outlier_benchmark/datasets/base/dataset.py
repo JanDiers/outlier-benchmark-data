@@ -7,30 +7,6 @@ from typing import Tuple
 import numpy as np
 import pandas as pd
 
-from outlier_benchmark.callbacks.base.callback import BaseCallback
-
-
-def load_callbacks(load):
-    @functools.wraps(load)
-    def call_load(*args, **kwargs):
-        dataset: BaseDataset = args[0]
-
-        # execute callbacks before load
-        for callback in dataset.callbacks:
-            if hasattr(callback, 'before_load'):
-                dataset = callback.before_load(dataset)
-
-        X, y = load(*args, **kwargs)
-
-        # execute callbacks before load
-        for callback in dataset.callbacks:
-            if hasattr(callback, 'after_load'):
-                dataset, X, y = callback.after_load(dataset, X, y)
-
-        return X, y
-
-    return call_load
-
 
 @dataclass
 class BaseDataset:
@@ -51,7 +27,6 @@ class BaseDataset:
     def __post_init__(self):
         self.pct_outlier = round((self.num_outlier / self.num_samples) * 100, 2)
 
-    @load_callbacks
     def load(self, download: bool = True) -> Tuple[np.ndarray, np.ndarray]:
         """
         loads the data X and y, both numpy arrays. If not previously downloaded and ``download=True``, before loading
@@ -69,26 +44,8 @@ class BaseDataset:
 
         df = pd.read_csv(self.path)
         X = df.drop('outlier', axis=1).values
-        y = df['outlier'].values
+        y = df['outlier'].values.astype(int)
         return X, y
-
-    def remove_callbacks(self):
-        self.callbacks = []
-
-    def add_callback(self, callback: BaseCallback) -> 'BaseDataset':
-        """
-        Adds the callback to the dataset. Callbacks are executed in the order they are added.
-
-        :param callback: callback,
-        :return: None
-        """
-
-        if not isinstance(callback, BaseCallback):
-            raise ValueError(f'Can only add instances of Callbacks as callback. You passed: {type(callback)}')
-
-        self.callbacks.append(callback)
-
-        return self
 
     def _download(self):
         from outlier_benchmark.config import DOWNLOAD_BASE_URL, DATA_HOME

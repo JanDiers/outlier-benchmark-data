@@ -52,10 +52,14 @@ class Cifar15pct(BaseDataset):
 
     >>> from outlier_benchmark.datasets import cifar15pct
     >>> X, y = cifar15pct.load(download=True)  # download will only take place if not previously downloaded
-    >>> X.shape  # (50000, 27)
-    >>> y.sum()  # 1508, the number of outliers in the dataset
-    >>> X.max()  # 1.0
-    >>> X.min()  # 0.0
+    >>> X.shape
+    (3453, 200)
+    >>> y.sum()
+    453
+    >>> X.max().round(2)
+    8.06
+    >>> X.min().round(2)
+    -6.45
 
     ..  [EfficientNet] Tan, Mingxing, and Quoc Le. "Efficientnet: Rethinking model scaling for convolutional neural networks."
         International Conference on Machine Learning. PMLR, 2019.

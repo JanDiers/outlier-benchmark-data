@@ -32,10 +32,14 @@ class Waveform(BaseDataset):
 
     >>> from outlier_benchmark.datasets import waveform
     >>> X, y = waveform.load(download=True)  # download will only take place if not previously downloaded
-    >>> X.shape  # (3443, 21)
-    >>> y.sum()  # 100, the number of outliers in the dataset
-    >>> X.max()  # 9.06
-    >>> X.min()  # -4.2
+    >>> X.shape
+    (3443, 21)
+    >>> y.sum()  # the number of outliers in the dataset
+    100
+    >>> X.max()
+    9.06
+    >>> X.min()
+    -4.2
 
     ..  [1] Campos, G.O., Zimek, A., Sander, J. et al. On the evaluation of unsupervised outlier detection: measures,
         datasets, and an empirical study. Data Min Knowl Disc 30, 891–927 (2016).

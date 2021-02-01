@@ -11,7 +11,7 @@ for i in datasets.__all__:
         dataset = getattr(datasets, i)
         l.append(asdict(dataset()))
 
-df_dataset_descriptions = pd.DataFrame(l)
+df_dataset_descriptions = pd.DataFrame(l).drop('callbacks', axis=1)
 df_dataset_descriptions['name'] = df_dataset_descriptions['name'].apply(lambda name: f':doc:`datasets/{name}`')
 
 """

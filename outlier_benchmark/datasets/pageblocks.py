@@ -32,10 +32,14 @@ class PageBlocks(BaseDataset):
 
     >>> from outlier_benchmark.datasets import pageblocks
     >>> X, y = pageblocks.load(download=True)  # download will only take place if not previously downloaded
-    >>> X.shape  # (5171, 10)
-    >>> y.sum()  # 258, the number of outliers in the dataset
-    >>> X.max()  # 143993.0
-    >>> X.min()  # 0.012
+    >>> X.shape
+    (5171, 10)
+    >>> y.sum()  # the number of outliers in the dataset
+    258
+    >>> X.max()
+    143993.0
+    >>> X.min()
+    0.012
 
     ..  [1] Campos, G.O., Zimek, A., Sander, J. et al. On the evaluation of unsupervised outlier detection: measures,
         datasets, and an empirical study. Data Min Knowl Disc 30, 891–927 (2016).

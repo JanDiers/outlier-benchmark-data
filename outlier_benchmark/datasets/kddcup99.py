@@ -32,10 +32,14 @@ class KDDCup99(BaseDataset):
 
     >>> from outlier_benchmark.datasets import kddcup99
     >>> X, y = kddcup99.load(download=True)  # download will only take place if not previously downloaded
-    >>> X.shape  # (60839, 41)
-    >>> y.sum()  # 246, the number of outliers in the dataset
-    >>> X.max()  # 6291668.0
-    >>> X.min()  # 0.0
+    >>> X.shape
+    (60839, 41)
+    >>> y.sum()
+    246
+    >>> X.max()
+    6291668.0
+    >>> X.min()
+    0.0
 
     ..  [1] Campos, G.O., Zimek, A., Sander, J. et al. On the evaluation of unsupervised outlier detection: measures,
         datasets, and an empirical study. Data Min Knowl Disc 30, 891–927 (2016).

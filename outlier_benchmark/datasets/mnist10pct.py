@@ -50,10 +50,14 @@ class MNIST10pct(BaseDataset):
 
     >>> from outlier_benchmark.datasets import mnist10pct
     >>> X, y = mnist10pct.load(download=True)  # download will only take place if not previously downloaded
-    >>> X.shape  # (50000, 27)
-    >>> y.sum()  # 1508, the number of outliers in the dataset
-    >>> X.max()  # 1.0
-    >>> X.min()  # 0.0
+    >>> X.shape
+    (3407, 50)
+    >>> y.sum()  # the number of outliers in the dataset
+    310
+    >>> X.max().round(2)
+    6.9
+    >>> X.min().round(2)
+    -6.43
 
     .. [EfficientNet] Tan, Mingxing, and Quoc Le. "Efficientnet: Rethinking model scaling for convolutional neural networks."
        International Conference on Machine Learning. PMLR, 2019.
