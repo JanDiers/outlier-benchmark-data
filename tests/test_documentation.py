@@ -1,15 +1,12 @@
 import importlib
 import inspect
-import shutil
-import unittest
 import re
+import unittest
 from pathlib import Path
 
 import numpy as np
-import pandas as pd
 
 from outlier_benchmark.datasets import __all__ as all_datasets
-from outlier_benchmark.datasets.base.dataset import BaseDataset
 
 
 class TestDocumentation(unittest.TestCase):
