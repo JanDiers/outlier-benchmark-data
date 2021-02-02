@@ -21,7 +21,7 @@ class DatasetCollection:
 
     >>> collection = collection.num_features(maximum=15).num_samples(minimum=50)
     >>> collection
-    DatasetCollection(n_datasets=8, filters_applied=['num_features', 'num_samples'])
+    DatasetCollection(n_datasets=9, filters_applied=['num_features', 'num_samples'])
 
     At this point you can load the remaining datasets in a for loop and test it against your algorithms:
 
@@ -50,7 +50,7 @@ class DatasetCollection:
     >>> MyNewDataset() in collection
     True
     >>> collection[-1]  # doctest: +ELLIPSIS
-    MyNewDataset(name='MyNewDataset', num_samples=444, ...)
+    MyNewDataset(name='Any Name', num_samples=444, ...)
 
     """
 

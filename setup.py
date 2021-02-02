@@ -4,7 +4,7 @@ with open("README.md", "r") as fh:
     long_description = fh.read()
 
 setuptools.setup(
-    name="outlier-benchmark-data", # Replace with your own username
+    name="outlier-benchmark-data",  # Replace with your own username
     version="0.0.1",
     author="Jan Diers",
     author_email="jan.diers@uni-jena.de",
@@ -21,7 +21,6 @@ setuptools.setup(
     python_requires='>=3.7',
     install_requires=[
         'pandas>=0.25.0',
-        'scipy>=1.3.2',
         'numpy>=1.18.1'
     ]
 )
