@@ -11,12 +11,25 @@ import pandas as pd
 @dataclass
 class BaseDataset:
     name: str = field(init=False)
-    num_samples: int
-    num_features: int
-    num_outlier: int
-    num_duplicates: int
+    num_samples: int = field(init=False)
+    num_features: int = field(init=False)
+    num_outlier: int = field(init=False)
+    num_duplicates: int = field(init=False)
     pct_outlier: float = field(init=False)
-    callbacks: list = field(default_factory=lambda: [], repr=False)
+
+    _derived_datasets = []
+
+    def __init_subclass__(cls, **kwargs):
+        """
+        class method that registers every derived subclass. This method is needed to load all datasets in a
+        DatasetColelction.
+
+        :param kwargs: passed
+        :return: None
+
+        """
+        super().__init_subclass__(**kwargs)
+        cls._derived_datasets.append(cls)
 
     @property
     def path(self) -> Path:
