@@ -1,4 +1,3 @@
-import functools
 import urllib.request
 from dataclasses import dataclass, field
 from pathlib import Path
@@ -52,8 +51,9 @@ class BaseDataset:
             if download:
                 self._download()
             else:
-                raise ValueError(f'WBC data has not yet been downloaded to your machine and you passed download=False. '
-                                 f'Pass download=True to download and load data.')
+                raise ValueError(
+                    f'{self.name} data has not yet been downloaded to your machine and you passed download=False. '
+                    f'Pass download=True to download and load data.')
 
         df = pd.read_csv(self.path)
         X = df.drop('outlier', axis=1).values
