@@ -1,13 +1,15 @@
 import unittest
 
-from tests.dataset_loading import TestDatasetLoading
-from tests.callbacks import TestCallbacks
+from tests.dataset_loading import TestDatasetLoading as Dataset
+from tests.test_dataset_collection import TestDatasetCollection as Collection
+from tests.test_documentation import TestDocumentation as Documentation
 
 
 def suite():
     suite = unittest.TestSuite()
-    suite.addTest(TestDatasetLoading('test_all'))
-    suite.addTest(TestCallbacks('test_all'))
+    suite.addTest(Dataset('test_all'))
+    suite.addTest(Documentation('test_all'))
+    suite.addTest(Collection('test_all'))
     return suite
 
 

@@ -32,10 +32,14 @@ class Lymphography(BaseDataset):
 
     >>> from outlier_benchmark.datasets import lymphography
     >>> X, y = lymphography.load(download=True)  # download will only take place if not previously downloaded
-    >>> X.shape  # (148, 18)
-    >>> y.sum()  # 6, the number of outliers in the dataset
-    >>> X.max()  # 8.0
-    >>> X.min()  # 0.0484523833859467
+    >>> X.shape
+    (148, 18)
+    >>> y.sum()  # the number of outliers in the dataset
+    6
+    >>> X.max()
+    8.0
+    >>> X.min().round(2)
+    0.05
 
     ..  [1] Campos, G.O., Zimek, A., Sander, J. et al. On the evaluation of unsupervised outlier detection: measures,
         datasets, and an empirical study. Data Min Knowl Disc 30, 891–927 (2016).

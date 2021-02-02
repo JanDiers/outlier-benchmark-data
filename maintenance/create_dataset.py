@@ -63,8 +63,8 @@ def make_package_for_data(path):
         >>> X, y = {name.lower()}.load(download=True)  # download will only take place if not previously downloaded
         >>> X.shape  # ({num_samples}, {num_features})
         >>> y.sum()  # {y.sum()}, the number of outliers in the dataset
-        >>> X.max()  # {X.max()}
-        >>> X.min()  # {X.min()}
+        >>> X.max()  # {X.maximum()}
+        >>> X.min()  # {X.minimum()}
     
         ..  [1] On the Evaluation of Unsupervised Outlier Detection: Measures, Datasets, and an Empirical Study
             by G. O. Campos, A. Zimek, J. Sander, R. J. G. B. Campello, B. Micenková, E. Schubert, I. Assent and M. E. Houle

@@ -32,10 +32,14 @@ class WDBC(BaseDataset):
 
     >>> from outlier_benchmark.datasets import wdbc
     >>> X, y = wdbc.load(download=True)  # download will only take place if not previously downloaded
-    >>> X.shape  # (367, 30)
-    >>> y.sum()  # 10, the number of outliers in the dataset
-    >>> X.max()  # 3234.0
-    >>> X.min()  # 0.0
+    >>> X.shape
+    (367, 30)
+    >>> y.sum()  # the number of outliers in the dataset
+    10
+    >>> X.max()
+    3234.0
+    >>> X.min()
+    0.0
 
     ..  [1] Campos, G.O., Zimek, A., Sander, J. et al. On the evaluation of unsupervised outlier detection: measures,
         datasets, and an empirical study. Data Min Knowl Disc 30, 891–927 (2016).

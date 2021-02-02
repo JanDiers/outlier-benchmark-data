@@ -32,10 +32,14 @@ class Parkinson(BaseDataset):
 
     >>> from outlier_benchmark.datasets import parkinson
     >>> X, y = parkinson.load(download=True)  # download will only take place if not previously downloaded
-    >>> X.shape  # (50, 22)
-    >>> y.sum()  # 2, the number of outliers in the dataset
-    >>> X.max()  # 592.03
-    >>> X.min()  # -7.964984
+    >>> X.shape
+    (50, 22)
+    >>> y.sum()  # the number of outliers in the dataset
+    2
+    >>> X.max()
+    592.03
+    >>> X.min().round(2)
+    -7.96
 
     ..  [1] Campos, G.O., Zimek, A., Sander, J. et al. On the evaluation of unsupervised outlier detection: measures,
         datasets, and an empirical study. Data Min Knowl Disc 30, 891–927 (2016).

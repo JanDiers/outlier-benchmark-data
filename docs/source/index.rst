@@ -12,7 +12,7 @@ Outlier Benchmark Data
 
 
 This library has the goal to facilitate research in the area of outlier, anomaly and novelty detection. It is also well
-suited for other areas that deal with unbalanced classification problems. Currently, we provide 23 datasets that are
+suited for other areas that deal with unbalanced classification problems. Currently, we provide 29 datasets that are
 widely used in the research community, whereas the number steadily grows.
 
 Starting is easy:
@@ -33,6 +33,8 @@ See all the datasets in the :doc:`modules/datasets` section.
 
 .. toctree::
    :hidden:
-   :maxdepth: 3
+   :maxdepth: 4
 
    modules/datasets
+   modules/dataset_collection
+   modules/custom_datasets

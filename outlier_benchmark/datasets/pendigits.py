@@ -32,10 +32,14 @@ class PenDigits(BaseDataset):
 
     >>> from outlier_benchmark.datasets import pendigits
     >>> X, y = pendigits.load(download=True)  # download will only take place if not previously downloaded
-    >>> X.shape  # (9868, 16)
-    >>> y.sum()  # 20, the number of outliers in the dataset
-    >>> X.max()  # 100.0
-    >>> X.min()  # 0.0
+    >>> X.shape
+    (9868, 16)
+    >>> y.sum()  # the number of outliers in the dataset
+    20
+    >>> X.max()
+    100.0
+    >>> X.min()
+    0.0
 
     ..  [1] Campos, G.O., Zimek, A., Sander, J. et al. On the evaluation of unsupervised outlier detection: measures,
         datasets, and an empirical study. Data Min Knowl Disc 30, 891–927 (2016).

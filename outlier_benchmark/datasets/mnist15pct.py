@@ -15,9 +15,9 @@ class MNIST15pct(BaseDataset):
     +-----------------------+--------+
     |number of outliers:    |  465   |
     +-----------------------+--------+
-    |percentage outliers:   | 0.05 % |
+    |percentage outliers:   |13.05 % |
     +-----------------------+--------+
-    |number of duplicates:  |    0   |
+    |number of duplicates:  |   26   |
     +-----------------------+--------+
 
     This dataset is based on the MNIST dataset. On the test set, an [EfficientNet]_ was used to extract embeddings
@@ -52,10 +52,14 @@ class MNIST15pct(BaseDataset):
 
     >>> from outlier_benchmark.datasets import mnist15pct
     >>> X, y = mnist15pct.load(download=True)  # download will only take place if not previously downloaded
-    >>> X.shape  # (50000, 27)
-    >>> y.sum()  # 1508, the number of outliers in the dataset
-    >>> X.max()  # 1.0
-    >>> X.min()  # 0.0
+    >>> X.shape
+    (3562, 50)
+    >>> y.sum()  #  the number of outliers in the dataset
+    465
+    >>> X.max().round(2)
+    6.9
+    >>> X.min().round(2)
+    -6.43
 
     .. [EfficientNet] Tan, Mingxing, and Quoc Le. "Efficientnet: Rethinking model scaling for convolutional neural networks."
        International Conference on Machine Learning. PMLR, 2019.
