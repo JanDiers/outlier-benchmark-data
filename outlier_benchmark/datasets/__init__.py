@@ -27,6 +27,8 @@ from .cifar15pct import cifar15pct, Cifar15pct
 from .mnist05pct import mnist05pct, MNIST05pct
 from .mnist10pct import mnist10pct, MNIST10pct
 from .mnist15pct import mnist15pct, MNIST15pct
+from .oodcifar100 import oodcifar100, OODCifar100
+from .oodcifar100emb import oodcifar100emb, OODCifar100Emb
 
 __all__ = [
     'aloi', 'ALOI',
@@ -58,5 +60,6 @@ __all__ = [
     'mnist05pct', 'MNIST05pct',
     'mnist10pct', 'MNIST10pct',
     'mnist15pct', 'MNIST15pct',
-
+    'oodcifar100', 'OODCifar100',
+    'oodcifar100emb', 'OODCifar100Emb',
 ]
