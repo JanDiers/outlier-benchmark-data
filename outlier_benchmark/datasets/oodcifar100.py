@@ -34,13 +34,13 @@ class OODCifar100(BaseDataset):
     >>> from outlier_benchmark.datasets import oodcifar100
     >>> X, y = oodcifar100.load(download=True)  # download will only take place if not previously downloaded
     >>> X.shape
-    (3562, 50)
+    (19968, 100)
     >>> y.sum()  #  the number of outliers in the dataset
-    465
+    9984
     >>> X.max().round(2)
-    6.9
+    0.99
     >>> X.min().round(2)
-    -6.43
+    0.0
 
     .. [EfficientNet] Tan, Mingxing, and Quoc Le. "Efficientnet: Rethinking model scaling for convolutional neural networks."
        International Conference on Machine Learning. PMLR, 2019.
