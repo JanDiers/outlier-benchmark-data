@@ -56,7 +56,7 @@ class Cifar10O(BaseDataset):
 
     """
 
-    name: str = field(default='Cifar10o', init=False)
+    name: str = field(default='Cifar10O', init=False)
     num_samples: int = field(default=10000, init=False)
     num_features: int = field(default=10, init=False)
     num_outlier: int = field(default=0, init=False)
