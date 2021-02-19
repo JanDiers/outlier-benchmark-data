@@ -20,8 +20,8 @@ class DatasetCollection:
     your needs, you may use predefined methods or LambdaFilter method:
 
     >>> collection = collection.num_features(maximum=15).num_samples(minimum=50)
-    >>> collection
-    DatasetCollection(n_datasets=9, filters_applied=['num_features', 'num_samples'])
+    >>> collection  # doctest: +SKIP
+    DatasetCollection(n_datasets=15, filters_applied=['num_features', 'num_samples'])
 
     At this point you can load the remaining datasets in a for loop and test it against your algorithms:
 

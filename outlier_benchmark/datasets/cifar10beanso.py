@@ -11,7 +11,7 @@ class Cifar10BeansO(BaseDataset):
     +-----------------------+--------+
     |number of samples:     | 1034   |
     +-----------------------+--------+
-    |number of features:    |  10   |
+    |number of features:    |  10    |
     +-----------------------+--------+
     |number of outliers:    |  1034  |
     +-----------------------+--------+
@@ -57,7 +57,7 @@ class Cifar10BeansO(BaseDataset):
     name: str = field(default='Cifar10BeansO', init=False)
     num_samples: int = field(default=1034, init=False)
     num_features: int = field(default=10, init=False)
-    num_outlier: int = field(default=0, init=False)
+    num_outlier: int = field(default=1034, init=False)
     num_duplicates: int = field(default=0, init=False)
 
 

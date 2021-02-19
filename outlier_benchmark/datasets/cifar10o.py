@@ -4,18 +4,18 @@ from outlier_benchmark.datasets.base.dataset import BaseDataset
 
 
 @dataclass
-class Cifar10o(BaseDataset):
+class Cifar10O(BaseDataset):
     """
-    The Cifar10o dataset has the following properties:
+    The Cifar10O dataset has the following properties:
 
     +-----------------------+--------+
     |number of samples:     | 10000  |
     +-----------------------+--------+
     |number of features:    |  10    |
     +-----------------------+--------+
-    |number of outliers:    |  1034  |
+    |number of outliers:    |  0     |
     +-----------------------+--------+
-    |percentage outliers:   |100.0 % |
+    |percentage outliers:   |  0.0 % |
     +-----------------------+--------+
     |number of duplicates:  |   0    |
     +-----------------------+--------+
@@ -45,7 +45,7 @@ class Cifar10o(BaseDataset):
     >>> y.sum()  #  the number of outliers in the dataset
     0
     >>> X.max().round(2)
-    0.99
+    0.94
     >>> X.min().round(2)
     0.0
 
@@ -63,4 +63,4 @@ class Cifar10o(BaseDataset):
     num_duplicates: int = field(default=0, init=False)
 
 
-cifar10o = Cifar10o()
+cifar10o = Cifar10O()

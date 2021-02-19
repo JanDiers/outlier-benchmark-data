@@ -9,15 +9,15 @@ class Cifar10Cifar100F(BaseDataset):
     The Cifar10Cifar100F dataset has the following properties:
 
     +-----------------------+--------+
-    |number of samples:     | 1000   |
+    |number of samples:     | 10000  |
     +-----------------------+--------+
     |number of features:    |  320   |
     +-----------------------+--------+
-    |number of outliers:    |  1034  |
+    |number of outliers:    |  10000 |
     +-----------------------+--------+
     |percentage outliers:   |100.0 % |
     +-----------------------+--------+
-    |number of duplicates:  |   0    |
+    |number of duplicates:  |   2    |
     +-----------------------+--------+
 
     This dataset is used for Out of Distribution Detection. Out of Distribution Detection aims to detect images
@@ -37,11 +37,11 @@ class Cifar10Cifar100F(BaseDataset):
     >>> from outlier_benchmark.datasets import cifar10cifar100f
     >>> X, y = cifar10cifar100f.load(download=True)  # download will only take place if not previously downloaded
     >>> X.shape
-    (1000, 320)
+    (10000, 320)
     >>> y.sum()  #  the number of outliers in the dataset
-    1000
+    10000
     >>> X.max().round(2)
-    17.05
+    23.57
     >>> X.min().round(2)
     0.0
 
@@ -55,8 +55,8 @@ class Cifar10Cifar100F(BaseDataset):
     name: str = field(default='Cifar10Cifar100F', init=False)
     num_samples: int = field(default=10000, init=False)
     num_features: int = field(default=320, init=False)
-    num_outlier: int = field(default=0, init=False)
-    num_duplicates: int = field(default=0, init=False)
+    num_outlier: int = field(default=10000, init=False)
+    num_duplicates: int = field(default=2, init=False)
 
 
 cifar10cifar100f = Cifar10Cifar100F()

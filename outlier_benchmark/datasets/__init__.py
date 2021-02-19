@@ -3,12 +3,12 @@ from .annthyroid import annthyroid, Annthyroid
 from .arrhythmia import arrhythmia, Arrhythmia
 from .cardiotocography import cardiotocography, Cardiotocography
 from .cifar05pct import cifar05pct, Cifar05pct
-from .cifar10cistrusleavesf import cifar10citrusleavesf, Cifar10CitrusLeavesF
+from .cifar10citrusleavesf import cifar10citrusleavesf, Cifar10CitrusLeavesF
 from .cifar10citrusleaveso import cifar10citrusleaveso, Cifar10CitrusLeavesO
 from .cifar10dtdf import cifar10dtdf, Cifar10DtdF
 from .cifar10dtdo import cifar10dtdo, Cifar10DtdO
 from .cifar10f import cifar10f, Cifar10F
-from .cifar10o import cifar10o, Cifar10o
+from .cifar10o import cifar10o, Cifar10O
 from .cifar10beansf import cifar10beansf, Cifar10BeansF
 from .cifar10beanso import cifar10beanso, Cifar10BeansO
 from .cifar10cifar100f import cifar10cifar100f, Cifar10Cifar100F
@@ -25,8 +25,6 @@ from .lymphography import lymphography, Lymphography
 from .mnist05pct import mnist05pct, MNIST05pct
 from .mnist10pct import mnist10pct, MNIST10pct
 from .mnist15pct import mnist15pct, MNIST15pct
-from .oodcifar100 import oodcifar100, OODCifar100
-from .oodcifar100emb import oodcifar100emb, OODCifar100Emb
 from .pageblocks import pageblocks, PageBlocks
 from .parkinson import parkinson, Parkinson
 from .pendigits import pendigits, PenDigits
@@ -70,16 +68,14 @@ __all__ = [
     'mnist05pct', 'MNIST05pct',
     'mnist10pct', 'MNIST10pct',
     'mnist15pct', 'MNIST15pct',
-    'oodcifar100', 'OODCifar100',
-    'oodcifar100emb', 'OODCifar100Emb',
     'cifar10beansf', 'Cifar10BeansF',
     'cifar10beanso', 'Cifar10BeansO',
     'cifar10cifar100f', 'Cifar10Cifar100F',
     'cifar10cifar100o', 'Cifar10Cifar100O',
     'cifar10f', 'Cifar10F',
-    'cifar10o', 'Cifar10o',
+    'cifar10o', 'Cifar10O',
     'cifar10citrusleaveso', 'Cifar10CitrusLeavesO',
-    'cifar10cistrusleavesf', 'Cifar10CitrusLeavesF',
+    'cifar10citrusleavesf', 'Cifar10CitrusLeavesF',
     'cifar10dtdf', 'Cifar10DtdF',
     'cifar10dtdo', 'Cifar10DtdO',
 ]

@@ -56,9 +56,9 @@ class Cifar10CitrusLeavesO(BaseDataset):
     """
 
     name: str = field(default='Cifar10CitrusLeavesO', init=False)
-    num_samples: int = field(default=1034, init=False)
+    num_samples: int = field(default=594, init=False)
     num_features: int = field(default=10, init=False)
-    num_outlier: int = field(default=0, init=False)
+    num_outlier: int = field(default=594, init=False)
     num_duplicates: int = field(default=0, init=False)
 
 
