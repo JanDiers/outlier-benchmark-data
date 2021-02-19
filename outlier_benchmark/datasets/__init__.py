@@ -2,6 +2,11 @@ from .aloi import aloi, ALOI
 from .annthyroid import annthyroid, Annthyroid
 from .arrhythmia import arrhythmia, Arrhythmia
 from .cardiotocography import cardiotocography, Cardiotocography
+from .cifar05pct import cifar05pct, Cifar05pct
+from .cifar10beansf import cifar10beansf, Cifar10BeansF
+from .cifar10beanso import cifar10beanso, Cifar10BeansO
+from .cifar10pct import cifar10pct, Cifar10pct
+from .cifar15pct import cifar15pct, Cifar15pct
 from .glass import glass, Glass
 from .heartdisease import heartdisease, HeartDisease
 from .hepatitis import hepatitis, Hepatitis
@@ -9,6 +14,11 @@ from .internetads import internetads, InternetAds
 from .ionosphere import ionosphere, Ionosphere
 from .kddcup99 import kddcup99, KDDCup99
 from .lymphography import lymphography, Lymphography
+from .mnist05pct import mnist05pct, MNIST05pct
+from .mnist10pct import mnist10pct, MNIST10pct
+from .mnist15pct import mnist15pct, MNIST15pct
+from .oodcifar100 import oodcifar100, OODCifar100
+from .oodcifar100emb import oodcifar100emb, OODCifar100Emb
 from .pageblocks import pageblocks, PageBlocks
 from .parkinson import parkinson, Parkinson
 from .pendigits import pendigits, PenDigits
@@ -21,14 +31,6 @@ from .wbc import wbc, WBC
 from .wdbc import wdbc, WDBC
 from .wilt import wilt, Wilt
 from .wpbc import wpbc, WPBC
-from .cifar05pct import cifar05pct, Cifar05pct
-from .cifar10pct import cifar10pct, Cifar10pct
-from .cifar15pct import cifar15pct, Cifar15pct
-from .mnist05pct import mnist05pct, MNIST05pct
-from .mnist10pct import mnist10pct, MNIST10pct
-from .mnist15pct import mnist15pct, MNIST15pct
-from .oodcifar100 import oodcifar100, OODCifar100
-from .oodcifar100emb import oodcifar100emb, OODCifar100Emb
 
 __all__ = [
     'aloi', 'ALOI',
@@ -62,4 +64,9 @@ __all__ = [
     'mnist15pct', 'MNIST15pct',
     'oodcifar100', 'OODCifar100',
     'oodcifar100emb', 'OODCifar100Emb',
+    'cifar10beansf', 'Cifar10BeansF',
+    'cifar10beanso', 'Cifar10BeansO',
+    'cifar10cifar100f', 'Cifar10Cifar100F',
+    'cifar10cifar100o', 'Cifar10Cifar100O',
+
 ]
