@@ -3,6 +3,8 @@ from .annthyroid import annthyroid, Annthyroid
 from .arrhythmia import arrhythmia, Arrhythmia
 from .cardiotocography import cardiotocography, Cardiotocography
 from .cifar05pct import cifar05pct, Cifar05pct
+from .cifar10f import cifar10f, Cifar10F
+from .cifar10o import cifar10o, Cifar10o
 from .cifar10beansf import cifar10beansf, Cifar10BeansF
 from .cifar10beanso import cifar10beanso, Cifar10BeansO
 from .cifar10cifar100f import cifar10cifar100f, Cifar10Cifar100F
@@ -70,4 +72,6 @@ __all__ = [
     'cifar10beanso', 'Cifar10BeansO',
     'cifar10cifar100f', 'Cifar10Cifar100F',
     'cifar10cifar100o', 'Cifar10Cifar100O',
+    'cifar10f', 'Cifar10F',
+    'cifar10o', 'Cifar10o',
 ]
