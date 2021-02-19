@@ -11,7 +11,7 @@ class Cifar10BeansO(BaseDataset):
     +-----------------------+--------+
     |number of samples:     | 1034   |
     +-----------------------+--------+
-    |number of features:    |  10   |
+    |number of features:    |  10    |
     +-----------------------+--------+
     |number of outliers:    |  1034  |
     +-----------------------+--------+
