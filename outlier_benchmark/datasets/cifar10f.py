@@ -44,7 +44,7 @@ class Cifar10F(BaseDataset):
     >>> X.shape
     (10000, 320)
     >>> y.sum()  #  the number of outliers in the dataset
-    10000
+    0
     >>> X.max().round(2)
     20.73
     >>> X.min().round(2)
@@ -59,7 +59,7 @@ class Cifar10F(BaseDataset):
 
     name: str = field(default='Cifar10F', init=False)
     num_samples: int = field(default=10000, init=False)
-    num_features: int = field(default=10, init=False)
+    num_features: int = field(default=320, init=False)
     num_outlier: int = field(default=0, init=False)
     num_duplicates: int = field(default=0, init=False)
 

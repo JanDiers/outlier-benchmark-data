@@ -17,7 +17,7 @@ class Cifar10Cifar100O(BaseDataset):
     +-----------------------+--------+
     |percentage outliers:   |100.0 % |
     +-----------------------+--------+
-    |number of duplicates:  |   0    |
+    |number of duplicates:  |   2    |
     +-----------------------+--------+
 
     This dataset is used for Out of Distribution Detection. Out of Distribution Detection aims to detect images
@@ -57,8 +57,8 @@ class Cifar10Cifar100O(BaseDataset):
     name: str = field(default='Cifar10Cifar100O', init=False)
     num_samples: int = field(default=10000, init=False)
     num_features: int = field(default=10, init=False)
-    num_outlier: int = field(default=0, init=False)
-    num_duplicates: int = field(default=0, init=False)
+    num_outlier: int = field(default=10000, init=False)
+    num_duplicates: int = field(default=2, init=False)
 
 
 cifar10cifar100o = Cifar10Cifar100O()
