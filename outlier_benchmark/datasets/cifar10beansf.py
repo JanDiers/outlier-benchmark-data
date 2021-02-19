@@ -37,11 +37,11 @@ class Cifar10BeansF(BaseDataset):
     >>> from outlier_benchmark.datasets import cifar10beansf
     >>> X, y = cifar10beansf.load(download=True)  # download will only take place if not previously downloaded
     >>> X.shape
-    (19968, 100)
+    (1034, 320)
     >>> y.sum()  #  the number of outliers in the dataset
-    9984
+    1034
     >>> X.max().round(2)
-    0.99
+    17.05
     >>> X.min().round(2)
     0.0
 

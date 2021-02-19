@@ -13,7 +13,7 @@ class Cifar10Cifar100O(BaseDataset):
     +-----------------------+--------+
     |number of features:    |  10    |
     +-----------------------+--------+
-    |number of outliers:    |  1034  |
+    |number of outliers:    |  10000 |
     +-----------------------+--------+
     |percentage outliers:   |100.0 % |
     +-----------------------+--------+
@@ -36,11 +36,11 @@ class Cifar10Cifar100O(BaseDataset):
     >>> from outlier_benchmark.datasets import cifar10cifar100o
     >>> X, y = cifar10cifar100o.load(download=True)  # download will only take place if not previously downloaded
     >>> X.shape
-    (19968, 100)
+    (10000, 10)
     >>> y.sum()  #  the number of outliers in the dataset
-    9984
+    10000
     >>> X.max().round(2)
-    0.99
+    0.96
     >>> X.min().round(2)
     0.0
 

@@ -42,11 +42,11 @@ class Cifar10F(BaseDataset):
     >>> from outlier_benchmark.datasets import cifar10f
     >>> X, y = cifar10f.load(download=True)  # download will only take place if not previously downloaded
     >>> X.shape
-    (10000, 10)
+    (10000, 320)
     >>> y.sum()  #  the number of outliers in the dataset
-    0
+    10000
     >>> X.max().round(2)
-    0.99
+    20.73
     >>> X.min().round(2)
     0.0
 

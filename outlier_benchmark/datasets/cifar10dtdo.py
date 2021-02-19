@@ -9,11 +9,11 @@ class Cifar10DtdO(BaseDataset):
     The Cifar10DtdO dataset has the following properties:
 
     +-----------------------+--------+
-    |number of samples:     | 1034   |
+    |number of samples:     | 1880   |
     +-----------------------+--------+
-    |number of features:    |  10   |
+    |number of features:    |  10    |
     +-----------------------+--------+
-    |number of outliers:    |  1034  |
+    |number of outliers:    |  1880  |
     +-----------------------+--------+
     |percentage outliers:   |100.0 % |
     +-----------------------+--------+
@@ -36,11 +36,11 @@ class Cifar10DtdO(BaseDataset):
     >>> from outlier_benchmark.datasets import cifar10dtdo
     >>> X, y = cifar10dtdo.load(download=True)  # download will only take place if not previously downloaded
     >>> X.shape
-    (19968, 100)
+    (1880, 10)
     >>> y.sum()  #  the number of outliers in the dataset
-    9984
+    1880
     >>> X.max().round(2)
-    0.99
+    0.88
     >>> X.min().round(2)
     0.0
 

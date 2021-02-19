@@ -9,11 +9,11 @@ class Cifar10CitrusLeavesF(BaseDataset):
     The Cifar10CitrusLeavesF dataset has the following properties:
 
     +-----------------------+--------+
-    |number of samples:     | 1034   |
+    |number of samples:     |  594   |
     +-----------------------+--------+
     |number of features:    |  320   |
     +-----------------------+--------+
-    |number of outliers:    |  1034  |
+    |number of outliers:    |  594   |
     +-----------------------+--------+
     |percentage outliers:   |100.0 % |
     +-----------------------+--------+
@@ -37,11 +37,11 @@ class Cifar10CitrusLeavesF(BaseDataset):
     >>> from outlier_benchmark.datasets import cifar10citrusleavesf
     >>> X, y = cifar10citrusleavesf.load(download=True)  # download will only take place if not previously downloaded
     >>> X.shape
-    (19968, 100)
+    (594, 320)
     >>> y.sum()  #  the number of outliers in the dataset
-    9984
+    594
     >>> X.max().round(2)
-    0.99
+    18.34
     >>> X.min().round(2)
     0.0
 
