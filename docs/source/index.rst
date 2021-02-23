@@ -18,7 +18,7 @@ A collection of datasets for outlier detection, out-of-distribution detection an
    <hr size=10>
 
 This library has the goal to facilitate research in the area of outlier, anomaly and novelty detection as well as related disciplines. The datasets
-provided here are taken from the literature of outlier detection and out-of-distribution detection. Currently, we provide 29 datasets that are
+provided here are taken from the literature of outlier detection and out-of-distribution detection. Currently, we provide 49 datasets that are
 widely used in the research community, whereas the number steadily grows.
 
 Starting is easy:
